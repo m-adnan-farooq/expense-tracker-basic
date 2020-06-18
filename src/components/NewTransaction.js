@@ -11,17 +11,22 @@ export const NewTransaction = () => {
         transactions[1](JSON.parse(JSON.stringify(allTransactions)))
         console.log(transactions[0])
     }
-    
-    
+
+    function expense(){
+        var particulars =  document.getElementById('particulars').value;
+        var amount = document.getElementById('amount').value;
+        allTransactions.push({'expense': [particulars, amount]})
+        transactions[1](JSON.parse(JSON.stringify(allTransactions)))
+        console.log(transactions[0])
+    }
     return (
         <div>
             <h4>Add New Transaction</h4>
             <form className = 'new-transaction'>
-                <div> {JSON.stringify(transactions[0])}</div>
                 <input id = 'particulars' type = 'text' placeholder = 'Enter transaction particulars' required/>
                 <input id = 'amount' type = 'number' placeholder = 'Enter amount' required/>
-                <button onClick={income} >Income</button>
-                <button>Expense</button>
+                <input type = 'button' value = 'Income' onClick={income} />
+                <input type = 'button' value = 'Expense' onClick={expense} />
                 <p>(Click on appropriate button to record the transaction)</p>
             </form>
         </div>

@@ -39,7 +39,35 @@
 
 .inflow-outflow{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 
+}
+#inflow-history, #outflow-history{
+  margin: 0rem 2rem 0rem 2rem;
+}
+
+#inflow-history h5, #outflow-history h5{
+  text-align: right;
+  display: block;
+}
+
+table, tr, th, td{
+  border: 1px solid orange;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.particulars-history{
+  width: 16rem;
+  max-width: 16rem;
+}
+
+table{
+  width: 30rem;
+  max-width: 30rem;
+}
+
+.particular-details{
+  text-align: left;
 }
