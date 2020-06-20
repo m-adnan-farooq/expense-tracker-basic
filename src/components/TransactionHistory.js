@@ -18,7 +18,7 @@ export const TransactionHistory = () => {
             expense += parseFloat(allTransactions[j]['expense'][1])
             }
         }
-    var netBalance =income-expense;
+    // var netBalance =income-expense;
     return (
         <>
             <h4 >Transaction Details</h4>            
