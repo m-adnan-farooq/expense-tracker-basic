@@ -3,20 +3,25 @@ import GlobalContext from '../GlobalContext';
 import {allTransactions} from '../GlobalContext';
 
 export const TransactionHistory = () => {
-    var income;
+    var income = 0;
+    var expense = 0;    
     const thContext = useContext(GlobalContext)
     
     for(var i =0;i<allTransactions.length;i++){
-             if (allTransactions[i].income){
-                 income += parseFloat(allTransactions[i]['income'][1])
-                //  console.log (allTransactions[i]['income'][1])
-             }
-         }
+        if (allTransactions[i].income){
+            income += parseFloat(allTransactions[i]['income'][1])
+            }
+        }
     
+    for(var j =0;j<allTransactions.length;j++){
+        if (allTransactions[j].expense){
+            expense += parseFloat(allTransactions[j]['expense'][1])
+            }
+        }
+    var netBalance =income-expense;
     return (
         <>
-            <h4 >Transaction Details</h4>
-            
+            <h4 >Transaction Details</h4>            
             <div className = 'inflow-outflow'>
                 <table>
                     <tr>
@@ -47,6 +52,7 @@ export const TransactionHistory = () => {
                         <tr>
                             <td>Total</td>
                             <td>{income}</td>
+                            <td>{expense}</td>
                         </tr>
                 </table>
             </div>

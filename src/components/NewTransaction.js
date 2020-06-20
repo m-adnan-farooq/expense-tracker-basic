@@ -9,7 +9,7 @@ export const NewTransaction = () => {
         var amount = document.getElementById('amount').value;
         allTransactions.push({'income': [particulars, amount]})
         transactions[1](JSON.parse(JSON.stringify(allTransactions)))
-        console.log(transactions[0])
+        // console.log(transactions[0])
     }
 
     function expense(){
@@ -17,7 +17,7 @@ export const NewTransaction = () => {
         var amount = document.getElementById('amount').value;
         allTransactions.push({'expense': [particulars, amount]})
         transactions[1](JSON.parse(JSON.stringify(allTransactions)))
-        console.log(transactions[0])
+        // console.log(transactions[0])
     }
     return (
         <div>
