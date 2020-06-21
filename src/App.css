@@ -1,15 +1,18 @@
 body{
-  background-size: cover;
-  background-color: black;
+  /* background-size: cover; */
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  background-color: #5CDB95;
 }
 .App {
   text-align: center;
   padding: 20px 5px 50px 5px;
   color: #5CDB95;
-  /* width: 100%; */
-  /* height: 40rem; */
-  /* position: relative; */
-  background-size: cover;
+  background-color: black;
+  width: 110%;
+  border: 2px solid #5CDB95;
+  min-height: 100vh;
 }
 /* .App:fullscreen{
   height: 100%;
@@ -51,14 +54,14 @@ body{
   justify-content: center;
 
 }
-#inflow-history, #outflow-history{
+/* #inflow-history, #outflow-history{
   margin: 0rem 2rem 0rem 2rem;
 }
 
 #inflow-history h5, #outflow-history h5{
   text-align: right;
   display: block;
-}
+} */
 
 table, tr, th, td{
   border: 2px solid #379863;
@@ -69,6 +72,11 @@ table, tr, th, td{
 .particulars-history{
   width: 16rem;
   max-width: 16rem;
+}
+
+.inflow, .outflow{
+  width: 04rem;
+  max-width:04rem;
 }
 
 table{
@@ -114,4 +122,22 @@ table{
 
 ::placeholder{
   color: #5CDB95;
+}
+
+.net-balance{
+  font-weight: bold;
+}
+
+.btn1{
+  background-color: black;
+  border: 0.5px solid #5CDB95;
+  color: #5CDB95;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.particular-details span{
+  display: inline-block;
 }
