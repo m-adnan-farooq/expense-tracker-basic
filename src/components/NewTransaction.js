@@ -5,27 +5,36 @@ import {allTransactions} from '../GlobalContext';
 export const NewTransaction = () => {
     const transactions = useContext(GlobalContext);
     function income(){
-        if (document.getElementById('amount').value>0){
-        var particulars =  document.getElementById('particulars').value;
         var amount = document.getElementById('amount').value;
-        allTransactions.push({'income': [particulars, amount]})
-        transactions[1](JSON.parse(JSON.stringify(allTransactions)))}
+        var particulars =  document.getElementById('particulars').value;
+        if (amount>0){
+            if(amount - Math.floor(amount)>0){
+                alert(`Decimal figures are not allowed
+The nearest whole numbers are ${Math.floor(amount)} and ${Math.ceil(amount)}`)
+
+                }
+            else{
+            allTransactions.push({'income': [particulars, amount]})
+            transactions[1](JSON.parse(JSON.stringify(allTransactions)))}}
         else{
             alert('Please enter a value greater than zero')
         }
-        // console.log(transactions[0])
     }
 
     function expense(){
-        if (document.getElementById('amount').value>0){
-        var particulars =  document.getElementById('particulars').value;
-        var amount = document.getElementById('amount').value;
+        var amount =document.getElementById('amount').value;
+        var particulars =  document.getElementById('particulars').value;   
+        if (amount>0){
+            if (amount - Math.floor(amount)>0){
+                alert(`Decimal figures are not allowed
+The nearest whole numbers are ${Math.floor(amount)} and ${Math.ceil(amount)}`)
+            }
         allTransactions.push({'expense': [particulars, amount]})
         transactions[1](JSON.parse(JSON.stringify(allTransactions)))}
         else{
             alert('Please enter a value greater than zero')
         }
-        // console.log(transactions[0])
+        
     }
     return (
         <div>
