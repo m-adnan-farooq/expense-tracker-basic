@@ -1,6 +1,5 @@
 body{
   background-size: cover;
-  /* background-color: black; */
   display: flex;
   justify-content: center;
   background-image: url(./background-blur-clean-clear-531880.jpg);
@@ -17,7 +16,31 @@ body{
   min-height: 90vh;
   background-color:rgba(44, 42, 42, 0.4);
 }
+@media only screen and (max-width:600px){
+  .App{
+    margin-left: 300px;
+    margin-right: 10px;
+    width: 60%;
+    height: 50vh;
+  }
+  body{
+    width: 40vh;
+    height: 40vh;
+  }
+}
 
+@media only screen and (max-width:375px){
+  .App{
+    margin-left: 300px;
+    margin-right: 10px;
+    width: 60%;
+    height: 50vh;
+  }
+  body{
+    width: 40vh;
+    height: 40vh;
+  }
+}
 .header{
   border: 1px solid #C3CCF1;
   background-color: rgba(44, 42, 42, 0.4);
