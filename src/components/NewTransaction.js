@@ -58,7 +58,7 @@ The nearest whole numbers are ${Math.floor(amount)} and ${Math.ceil(amount)}`)
         
     }
     return (
-        <div>
+        <div className = 'newTransaction'>
             <h4>Add New Transaction</h4>
             <form className = 'new-transaction'>
                 <input id = 'particulars' type = 'text' placeholder = 'Enter transaction particulars' required/>

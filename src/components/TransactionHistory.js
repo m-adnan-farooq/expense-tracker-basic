@@ -4,6 +4,8 @@ import {allTransactions} from '../GlobalContext';
 // import {balanceState} from './Balance'
 
 export const TransactionHistory = () => {
+    
+
     const thContext = useContext(GlobalContext)
     var income = 0;
     var expense = 0;
@@ -26,8 +28,8 @@ export const TransactionHistory = () => {
         thContext[1](JSON.parse(JSON.stringify(allTransactions)))
     }
     return (
-        <>
-            <h4 >Transaction Details</h4>            
+        <div className = 'transaction-history'>
+            <h2>Transaction Details</h2>            
             <div className = 'inflow-outflow'>
                 <table>
                     <tr>
@@ -44,7 +46,7 @@ export const TransactionHistory = () => {
                                             <span>{Object.values(value)[0][0]}</span>
                                             <input className = 'btn1' type = 'button' value = 'Delete' onClick = {()=>{del1(value, index)}}></input>
                                         </td>
-                                        <td className = 'value'>{Object.values(value)[0][1]}</td>
+                                        <td className = 'value'>{value => new Intl.NumberFormat("en", {style: "currency", currency: "PKR"}).format(Object.values(value)[0][1])}</td>
                                         <td className = 'value'></td>
                                     </tr>
                                 )
@@ -73,6 +75,6 @@ export const TransactionHistory = () => {
                 </table>
             </div>
             
-        </>
+        </div>
     )
 }
