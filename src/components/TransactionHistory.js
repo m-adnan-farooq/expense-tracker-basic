@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import GlobalContext from '../GlobalContext';
 import {allTransactions} from '../GlobalContext';
-// import {balanceState} from './Balance'
+import {NumberFormat} from './NumberFormat';
 
 export const TransactionHistory = () => {
     
@@ -34,8 +34,8 @@ export const TransactionHistory = () => {
                 <table>
                     <tr>
                         <th className='particulars-history'>Particulars</th>
-                        <th className='inflow'>Inflow</th>
-                        <th className='outflow'>Outflow</th>
+                        <th className='inflow'>Income</th>
+                        <th className='outflow'>Expense</th>
                     </tr>
                         {thContext[0].map((value, index) =>{
                             // var values = JSON.parse(JSON.stringify(value));
@@ -46,7 +46,7 @@ export const TransactionHistory = () => {
                                             <span>{Object.values(value)[0][0]}</span>
                                             <input className = 'btn1' type = 'button' value = 'Delete' onClick = {()=>{del1(value, index)}}></input>
                                         </td>
-                                        <td className = 'value'>{value => new Intl.NumberFormat("en", {style: "currency", currency: "PKR"}).format(Object.values(value)[0][1])}</td>
+                                        <td className = 'value'>{NumberFormat(((Object.values(value)[0][1])))}</td>
                                         <td className = 'value'></td>
                                     </tr>
                                 )
@@ -59,18 +59,18 @@ export const TransactionHistory = () => {
                                             <input className = 'btn1' type = 'button' value = 'Delete' onClick = {()=>{del1(value, index)}}></input>
                                             </td>
                                         <td className = 'value'></td>
-                                        <td className = 'value'>{Object.values(value)[0][1]}</td>
+                                        <td className = 'value'>{NumberFormat(Object.values(value)[0][1])}</td>
                                     </tr>
                                 )
                             }
                         })}
                         <tr>
                             <td>Total</td>
-                            <td>{income}</td>
-                            <td>{expense}</td>
+                            <td>{NumberFormat(income)}</td>
+                            <td>{NumberFormat(expense)}</td>
                         </tr>
                         <tr>
-                            <td className = 'net-balance' colSpan='3'>Net Balance = {balance}</td>
+                            <td className = 'net-balance' colSpan='3'>Net Balance = Rs. {NumberFormat(balance)}</td>
                         </tr>
                 </table>
             </div>
